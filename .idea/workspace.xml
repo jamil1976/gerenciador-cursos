@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15679aa6-db97-4973-9c16-8cbc98ccfb3f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/view/cursos/formulario-view.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/cursos/listar-cursos-view.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/footer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/header.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/routes.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/Persistencia.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/FormularioInsercao.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/FormularioInsercao.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ListarCursos.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ListarCursos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/cursos/formulario-view.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/cursos/formulario-view.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -81,6 +79,13 @@
       <workItem from="1568126756218" duration="2067000" />
       <workItem from="1568133695827" duration="1791000" />
       <workItem from="1568135918764" duration="1789000" />
+      <workItem from="1568199946398" duration="1813000" />
+      <workItem from="1568201856369" duration="1391000" />
+      <workItem from="1568204183411" duration="1365000" />
+      <workItem from="1568208918757" duration="1789000" />
+      <workItem from="1568210732463" duration="1317000" />
+      <workItem from="1568213698235" duration="1454000" />
+      <workItem from="1568219418579" duration="794000" />
     </task>
     <servers />
   </component>
