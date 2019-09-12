@@ -33,10 +33,22 @@ class Persistencia implements InterfaceControladorRequisicao
         $curso = new Curso();
         $curso->setDescricao($descricao);
 
-        //inserir no banco
-        $this->entityManager->persist($curso);
-        $this->entityManager->flush();
+        /*Se o id ja existe eu atualizo/altero senao eu crio um novo curso*/
+        $id = filter_input(
+            INPUT_GET,
+            'id',
+            FILTER_VALIDATE_INT);
 
+        if (!is_null($id) && $id !== false) {
+            /* atualizar - ja tenho a entidade curso montada, só vou juntar/merge as atualizaçoes nesta entidade
+             curso com o curso que ja existe no banco para este id*/
+            $curso->setId($id);
+            $this->entityManager->merge($curso);
+        } else {
+            //inserir
+            $this->entityManager->persist($curso);
+        }
+        $this->entityManager->flush();
         header('Location: /listar-cursos');
     }
 
@@ -49,6 +61,8 @@ class Persistencia implements InterfaceControladorRequisicao
  * A função filter_input filtra os dados recebidos da requisição, enquanto filter_var filtra
  * o valor de qualquer variável que tenhamos no código.
  *
+ * O controller de persistencia faz tanto a inclusão de umnovo curso como a alteração do curso existente. Tudo depende
+ * do que é enviado via no formulario.view via query string(na url o id ou não).
  * */
 
 
