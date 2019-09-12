@@ -7,7 +7,7 @@ namespace Alura\Cursos\Controller;
 use Alura\Cursos\Entity\Curso;
 use Alura\Cursos\Infra\EntityManagerCreator;
 
-class FormularioEdicao implements InterfaceControladorRequisicao
+class FormularioEdicao extends ControllerComHtml implements InterfaceControladorRequisicao
 {
 
     /**
@@ -36,10 +36,13 @@ class FormularioEdicao implements InterfaceControladorRequisicao
 
         /*Buscaremos o curso correspondente do repositorio e ao carregar a view ela vai enxergar a var curso e seus valores
         No formulario-view eu faço a a verificação e envio dados para Persistencia.
+        A função renderiza retorna uma string da view renderizada
         */
         $curso = $this->repositorioCursos->find($id);
-        $titulo = "Alterar Curso - " . $curso->getDescricao();
-        require __DIR__ . '/../../view/cursos/formulario-view.php';
+        echo $this->renderizaHtml('cursos/formulario-view.php', [
+            'curso' => $curso,
+            'titulo' => "Alterar Curso - " . $curso->getDescricao()
+        ]);
 
     }
 
