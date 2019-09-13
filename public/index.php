@@ -17,6 +17,20 @@ if(!array_key_exists($caminho, $rotas))
     exit();
 }
 
+/* A sessão é inicializada antes da chamada de qualquer controlador - ou seja, qualquer controlador será executado já com a sessão inicializada.*/
+/*Um cookie no HTTP é uma informação de texto armazenada pelo navegador e utilizada sempre que uma nova requisição é enviada para o servidor. O PHP manda um cookie chamado PHPSESSID,
+  ou "sessão do PHP", contendo uma hash que permitirá a identificação do usuário. Dessa forma, quando o nosso navegador enviar essa hash na próxima requisição, o PHP reconhecerá que essa sessão é nossa e que temos o atributo logado na sessão, permitindo que continuemos.
+A sessao é mantida mesmo que façamos outra requisição http (a nao ser que se encerre a sessao - é qd o user sera deslogado).
+*/
+session_start();
+
+/*ehRotaLogin === false significa q n existe na rota a palavra login, então, podemos ser redirecionados para login(claro, se a sessao não existir/deslogado)*/
+if (!isset($_SESSION['logado']) && $caminho !=='/login' && $caminho !=='/realiza-login') {
+    header('Location: /login');
+    exit();
+}
+
+
 /*Eu vou pegar o valor da chave(rota), que é a classe controladora correspondente a chave/rota recebida.
  posso instanciar o controller/valor recebido pela variavel classeControladora(virou uma classe).
  O PHP permite que nós utilizemos uma variável como o nome da classe que queremos instanciar
